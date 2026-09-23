@@ -1,0 +1,385 @@
+/* 日系風格個人履歷與作品集網站樣式 */
+/* 色盤：溫暖米色背景 #fdf6e3 + 暗灰文字 #333 + 櫻花粉點綴 #e8b7c7 */
+
+/* 基礎重設與變數 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f5f1ff;
+    --text-color: #2f2540;
+    --accent-color: #7c4dff;
+    --accent-color-strong: #5b2ecf;
+    --light-gray: #f2eefc;
+    --dark-gray: #524466;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(92, 66, 150, 0.12);
+    --transition: all 0.3s ease;
+    --max-width: 1200px;
+}
+
+/* 基礎樣式 */
+body {
+    font-family: 'Microsoft JhengHei', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero區 */
+.hero {
+    text-align: center;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f4edff 0%, #efe6ff 100%);
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 關於我 */
+.about {
+    background-color: var(--white);
+}
+
+.about .container {
+    text-align: center;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 個人興趣 */
+.interests {
+    background-color: var(--light-gray);
+}
+
+.interests h2 {
+    margin-bottom: 40px;
+}
+
+.interests-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.interest-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.interest-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.interest-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    display: block;
+}
+
+.interest-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.interest-item p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+/* 作品集 */
+.portfolio {
+    background-color: var(--light-gray);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.portfolio-item {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.portfolio-item h3 {
+    font-size: 1.4rem;
+    margin: 20px;
+    color: var(--text-color);
+}
+
+.portfolio-item p {
+    font-size: 1rem;
+    margin: 0 20px 15px;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    margin: 0 20px 20px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--accent-color-strong);
+    transform: translateY(-2px);
+}
+
+/* 技能條 */
+.skills {
+    background-color: var(--white);
+}
+
+.skills h2 {
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-item {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    background-color: #efe7ff;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.skill-percent {
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.skill-bar {
+    background-color: #e3ddf7;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color) 0%, #9b74ff 100%);
+    width: 0;
+    transition: width 1.5s ease-out;
+}
+
+/* 頁腳 */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: var(--white);
+    border-top: 1px solid var(--light-gray);
+}
+
+footer p {
+    margin: 8px 0;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+footer p:first-child {
+    font-weight: 500;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+/* 動畫效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+
+/* 滾動時顯示區塊 */
+.about, .portfolio, .skills {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about.visible, .portfolio.visible, .skills.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
